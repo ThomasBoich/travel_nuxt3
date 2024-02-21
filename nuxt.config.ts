@@ -69,4 +69,15 @@ css: [
   //'primeflex/primeflex.css',
   //'~/assets/css/tailwind.css'
 ],
+title: 'Hello Nuxt',
+theme: {
+  dark: false,
+  light: true,
+  colors: {
+    primary: '#ff0000'
+  }
+},
+colorMode: {
+  preference: 'light'
+}
 })

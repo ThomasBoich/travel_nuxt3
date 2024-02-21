@@ -1,11 +1,7 @@
-import type { NuxtLink } from '#build/components';
 <template>
   <div class="footer">
     <div
-      class="footer-layout"
-      data-aos="fade-up"
-      data-aos-anchor-placement="center-bottom"
-    >
+      class="footer-layout" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
       <div class="footer-nav-layout">
         <ul>
           <span><NuxtLink to="">Сервисы</NuxtLink></span>

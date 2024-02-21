@@ -19,7 +19,7 @@
     </div>
   </div>
   <!-- <UButton label="Open" @click="isOpen = true" /> -->
-  <UModal v-model="isOpen" prevent-close>
+  <UModal v-model="isOpen" prevent-close style="z-index: 150;">
     <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
       <template #header>
         <div class="flex items-center justify-between">
@@ -45,7 +45,7 @@
 const isOpen = ref(false);
 </script>
 
-<style>
+<style scoped>
 .navigation {
   width: 100%;
   position: sticky;

@@ -17,7 +17,7 @@ p{
     align-items: center;
     margin: 0px 0px 0px 0px;
 }.hello-layout h1{
-    margin: 110px 0px 0px 0px;
+    margin: 75px 0px 0px 0px;
     font-size: clamp(25px, 3.99vw,  75px);
 }
 ul,li,a{
@@ -34,7 +34,7 @@ ul,li,a{
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 100px 50px 100px 50px;
+    padding: 100px 50px 0px 50px;
     background-color: #F1F1F1;
 }
 .footer-layout{

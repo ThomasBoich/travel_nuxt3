@@ -119,7 +119,7 @@ const countries = ref([
 ]);
 </script>
 
-<style>
+<style scoped>
 .popular-countries {
   width: 100%;
   display: flex;
