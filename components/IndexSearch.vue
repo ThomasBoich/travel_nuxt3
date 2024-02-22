@@ -69,52 +69,52 @@ const countries = ref([
     id: 2,
     name: "Ростов-на-Дону",
     countRoad: "1500 поездок",
-    url: "./country.png",
+    url: "./country2.webp",
   },
   {
     id: 3,
     name: "Екатерингбург",
     countRoad: "1500 поездок",
-    url: "./country.png",
+    url: "./country3.webp",
   },
   {
     id: 4,
     name: "Ярославль",
     countRoad: "1500 поездок",
-    url: "./country.png",
+    url: "./country4.webp",
   },
   {
     id: 5,
     name: "Геленджик",
     countRoad: "1500 поездок",
-    url: "./country.png",
+    url: "./country5.webp",
   },
   {
     id: 6,
     name: "Краснодар",
     countRoad: "1500 поездок",
-    url: "./country.png",
+    url: "./country6.webp",
   },
   {
     id: 7,
     name: "Красная Поляна",
     countRoad: "1500 поездок",
-    url: "./country.png",
+    url: "./country7.webp",
   },
   {
     id: 8,
     name: "Новосибирск",
     countRoad: "1500 поездок",
-    url: "./country.png",
+    url: "./country7.webp",
   },
-  { id: 9, name: "Воронеж", countRoad: "1500 поездок", url: "./country.png" },
-  { id: 10, name: "Самара", countRoad: "1500 поездок", url: "./country.png" },
-  { id: 11, name: "Тула", countRoad: "1500 поездок", url: "./country.png" },
+  { id: 9, name: "Воронеж", countRoad: "1500 поездок", url: "./country9.webp" },
+  { id: 10, name: "Самара", countRoad: "1500 поездок", url: "./country10.webp" },
+  { id: 11, name: "Тула", countRoad: "1500 поездок", url: "./country11.webp" },
   {
     id: 12,
     name: "Кисловодск",
     countRoad: "1500 поездок",
-    url: "./country.png",
+    url: "./country12.webp",
   },
 ]);
 </script>
@@ -205,13 +205,17 @@ const countries = ref([
 /* мобильная версия */
 @media (max-width: 490px) {
   .popular-countries-title h2 {
-    font-size: 19px;
+    font-size: 5vw;
   }
   .popular-countries-title {
     flex-direction: column;
     justify-content: flex-start;
     text-align: left;
     align-items: flex-start;
+    margin: 0px 0px 25px 0px;
+  }.popular-countries-title button{
+    font-size: 4vw;
+    color: #707070;
   }
   .popular-country-info span {
     font-size: 15px;
@@ -223,7 +227,11 @@ const countries = ref([
     gap: 15px;
   }
   .popular-countries {
-    margin: 45px 0px 75px 0px;
+    margin: 45px 0px 0px 0px;
+  }
+  .popular-countries-layout{
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto);
   }
 }
 </style>

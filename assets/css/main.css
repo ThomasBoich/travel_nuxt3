@@ -5,8 +5,8 @@ body{
     margin: 0;
     color: #000;
 }
-p{
-    font-size: 20px;
+.hello-layout p{
+    font-size: 25px;
     font-weight: 500;
     margin: 0px 0px 75px 0px;
 }
@@ -18,7 +18,7 @@ p{
     margin: 0px 0px 0px 0px;
 }.hello-layout h1{
     margin: 75px 0px 0px 0px;
-    font-size: clamp(25px, 3.99vw,  75px);
+    font-size: clamp(25px, 4.99vw,  90px);
 }
 ul,li,a{
     list-style: none;
@@ -34,7 +34,7 @@ ul,li,a{
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 100px 50px 0px 50px;
+    padding: 75px 50px 50px 50px;
     background-color: #F1F1F1;
 }
 .footer-layout{
@@ -108,4 +108,17 @@ h1{
     .hello-layout h1{
         margin: 75px 0px 0px 0px;
     }
+    .where{
+        width: calc(100% - 30px);
+        padding: 15px 0px 15px 0px!IMPORTANT;
+        margin: 0px 0px 0px 0px!IMPORTANT;
+      }
+      .footer{
+        padding: 50px 15px 25px 15px;
+      }
+      .footer-nav-layout{
+        flex-direction: column;
+        display: flex;
+        margin: 0px 0px 25px 0px;
+      }
 }

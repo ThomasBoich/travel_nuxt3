@@ -20,11 +20,10 @@
     </div>
   </div>
   <!-- <UButton label="Open" @click="isOpen = true" /> -->
-  <UModal v-model="isOpen" prevent-close style="z-index: 150">
+  <UModal v-model="isOpen" prevent-close style="z-index: 1150">
     <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
       <template #header>
-        <div class="flex items-center justify-between">
-          <!-- <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
+                  <!-- <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
             Modal
           </h3> -->
           <UButton
@@ -34,6 +33,8 @@
             class="-my-1"
             @click="isOpen = false"
           />
+        <div class="flex items-center justify-between" style="height: 75dvh;">
+
         </div>
       </template>
 
@@ -55,7 +56,7 @@ const isOpen = ref(false);
   padding: 15px 15px 15px 15px;
   background-color: #ffffff;
   border-bottom: 1px solid #e8e8e8;
-  z-index: 99;
+  z-index: 999;
 }
 .navigantion-layer {
   max-width: 1279px;
@@ -97,5 +98,10 @@ const isOpen = ref(false);
 }
 .no-login .create-button:hover {
   opacity: 0.9;
+}
+@media(max-width: 350px){
+  .no-login button{
+    display: none;
+  }
 }
 </style>

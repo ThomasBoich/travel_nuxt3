@@ -59,7 +59,12 @@ const popularCity = ref([
     border-radius: 9px;
     overflow: hidden;
     width: 32%;
-}.popular-road img{
+    cursor: pointer;
+}
+.popular-road:hover{
+    opacity: 0.9;
+}
+.popular-road img{
     width: 100%;
 }
 .popular-road-filter{
@@ -103,5 +108,24 @@ const popularCity = ref([
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
+}
+@media (max-width: 490px){
+    .index-popular-roads-title h2{
+        font-size: 5vw;
+    }
+    .index-pupular-roads-layer{
+        width: calc(100% - 30px);
+        margin: 45px auto 45px;
+    }.index-popular-roads-title span{
+        font-size: 15px;
+    }
+    .popular-roads{
+        overflow: hidden;
+        overflow-x: auto;
+        margin: 0px 0px 35px 0px;
+    }.popular-road{
+        min-width: 250px;
+        margin: 0px 15px 0px 0px;
+    }
 }
 </style>

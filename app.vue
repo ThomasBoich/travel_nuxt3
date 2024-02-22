@@ -1,60 +1,11 @@
 <script lang="ts" setup>
-const hello = ref("Путешевствуй в компании");
-
-const loaded = ref(false);
-const handleImageLoad = () => {
-  loaded.value = true;
-};
-
-onMounted(() => {
-  // Измерение времени монтирования компонента
-  const timeToMount = performance.now();
-  console.log("Время монтирования компонента:", timeToMount);
-
-  setTimeout(() => {
-    loaded.value = true;
-  }, 70);
-  // Установка loaded после завершения монтирования
-});
 </script>
-
 <template>
   <Navigation></Navigation>
   <NuxtLoadingIndicator />
-  <div class="content">
-    <div class="hello-layout">
-      <UProgress
-        animation="carousel"
-        v-if="!loaded"
-        style="margin: 100px 0px 70px 0px; max-width: 669px; width: 75%"
-        color="#00C7BB"
-      />
-      <h1 v-if="loaded" data-aos="fade-down">
-        {{ hello }}
-      </h1>
-      <p>Site.ru — это тысячи любителей впечатлений в одном месте</p>
-      <Search></Search>
-      <IndexSearch></IndexSearch>
-      <button class="other">Еще варианты: 495 шт.</button>
-    </div>
-
-    <PopularRoad></PopularRoad>
-    <IndexFriends></IndexFriends>
-    <div class="info-slide" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-      <div class="info-slide-layout">
-      <span>Запывпл ыжэлпжыэвлп эыжлп 
-вадлоыва опжапо ждываоп вы</span>
-      <p>ывлдаофыж даофжы оапфжоп жфдво пджлво пывжо дывоп ыовжрд оыро ывждлро ыап
-ывжр ывджлр оыапр оыдлро дывор джыордыаордлыаор дыворвоыр
-ывджлр оыдвлжорывдорджываордлаыопр</p>
-      <button>Название кнопки</button>
-    </div>
-    </div>
-    <!-- <img src="~/assets/img/slider.png" alt=""> -->
-
-  </div>
-
-  <Footer></Footer>
+  <NuxtLayout>
+  <NuxtPage></NuxtPage>
+  </NuxtLayout>
 </template>
 <style>
 body {
@@ -108,5 +59,32 @@ body {
   flex-direction: column;
   height: max-content;
   margin: 50px 0px 50px 0px;
+}
+@media (max-width: 490px){
+  form{
+    font-size: 15px!IMPORTANT;
+  }
+  .other{
+    width: calc(100% - 30px);
+  }
+  .info-slide{
+    width: calc(100% - 30px);
+    margin: 0px auto 0px;
+    padding: 0px 15px 15px 15px;
+    border-radius: 9px;
+  }
+  .info-slide span{
+    font-size: 7vw;
+    width: 100%;
+    max-width: 100%;
+    margin: 0px 0px 15px 0px;
+  }.info-slide p{
+    width: 100%;
+    max-width: 100%;
+    margin: 0px 0px 25px 0px;
+  }
+  .info-slide-layout{
+    margin: 25px 0px 25px 0px;
+  }
 }
 </style>

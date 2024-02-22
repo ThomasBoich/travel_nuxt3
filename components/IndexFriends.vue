@@ -1,17 +1,17 @@
 <script lang="ts" setup>
 const views = ref([
     {id: 1, title: 'Лес', image: './view.png'},
-    {id: 2, title: 'Театр', image: './view.png'},
-    {id: 3, title: 'Знакомства', image: './view.png'},
-    {id: 4, title: 'Комедии', image: './view.png'},
-    {id: 5, title: 'Спортзал', image: './view.png'},
-    {id: 6, title: 'Конный спорт', image: './view.png'},
-    {id: 7, title: 'Парусный спорт', image: './view.png'},
-    {id: 8, title: 'Еда', image: './view.png'},
-    {id: 9, title: 'Фотографии', image: './view.png'},
-    {id: 10, title: 'Фотографии', image: './view.png'},
-    {id: 11, title: 'Дайвинг', image: './view.png'},
-    {id: 12, title: 'Параплыны', image: './view.png'},
+    {id: 2, title: 'Театр', image: './view2.png'},
+    {id: 3, title: 'Знакомства', image: './view3.png'},
+    {id: 4, title: 'Комедии', image: './view4.png'},
+    {id: 5, title: 'Спортзал', image: './view5.png'},
+    {id: 6, title: 'Конный спорт', image: './view6.png'},
+    {id: 7, title: 'Парусный спорт', image: './view7.png'},
+    {id: 8, title: 'Еда', image: './view8.png'},
+    {id: 9, title: 'Фотографии', image: './view9.png'},
+    {id: 10, title: 'Фотографии', image: './view3.png'},
+    {id: 11, title: 'Дайвинг', image: './view7.png'},
+    {id: 12, title: 'Параплыны', image: './view2.png'},
     {id: 13, title: 'Прогулки', image: './view.png'},
 ])
 
@@ -72,6 +72,8 @@ const users = ref([
         margin: 50px 0px 0px 0px;
         display: flex;
         justify-content: space-between;
+        overflow: hidden;
+        overflow-x: auto;
     }
     .index-friends-user{
         display: flex;
@@ -114,5 +116,42 @@ const users = ref([
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
+}
+@media (max-width: 490px){
+    .index-friends-layout{
+        margin: 0px auto 35px;
+    }
+    .index-friends-title{
+        width: calc(100% -30px);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px 0px 0px 15px;
+    }
+    .index-friends-title h2{
+        font-size: 5vw;
+    }
+    .road-view{
+        overflow: hidden;
+        overflow-x: auto;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, auto);
+    padding: 0px 15px 0px 15px;
+    }
+    .index-friends-user{
+        margin: 0px 15px 0px 0px;
+    }
+    .index-friends-user img{
+        max-width: 135px;
+    }.index-friends-user p{
+        font-size: 12px;
+        padding: 0px;
+        width: 100%;
+        margin: 0px 0px 0px 0px;
+    }
+    .index-friends-users{
+        padding: 0px 15px 0px 15px;
+        margin: 0px 0px 35px 0px;
+    }
 }
 </style>
