@@ -1,19 +1,19 @@
 <template>
   <!-- <div></div> -->
   <form action="" method="post">
-    <USelectMenu
-      class="where"
-      v-model="selected"
-      :loading="loading"
-      :searchable="search"
-      placeholder="Куда.."
-      option-attribute="name"
-      multiple
-      trailing
-      by="id"
-      style="border: none;box-shadow:none;font-size:17px;padding: 0px 0px 0px 25px;width:97%;"
+    <WhatSearch></WhatSearch>
+    <UInput
+      size="sm"
+      placeholder="Откуда едем?"
+      class="is"
+      style="
+        border: none;
+        box-shadow: none;
+        font-size: 17px;
+        padding: 0px 0px 0px 25px;
+        color: #676767;
+      "
     />
-    <UInput size="sm" placeholder="Откуда едем" class="is" style="border:none;box-shadow: none;font-size:17px;padding: 0px 0px 0px 25px;color: #676767;" />
 
     <USelectMenu
       class="where"
@@ -25,7 +25,13 @@
       multiple
       trailing
       by="id"
-      style="border: none;box-shadow:none;font-size:17px;padding: 0px 0px 0px 25px;width:97%;"
+      style="
+        border: none;
+        box-shadow: none;
+        font-size: 17px;
+        padding: 0px 0px 0px 25px;
+        width: 97%;
+      "
     />
     <Button class="search" label="Найти" severity="contrast" rounded />
   </form>

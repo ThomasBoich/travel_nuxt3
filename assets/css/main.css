@@ -80,6 +80,8 @@ ul,li,a{
 
 .footer-copiryght-layout span{
     font-weight: 500;
+    display: flex;
+    margin: 0px 0px 15px 0px;
 }
 
 .footer-copiryght-layout p{

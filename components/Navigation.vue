@@ -6,7 +6,8 @@
       </div>
       <div class="auth-user">
         <div class="no-login">
-          <span class="create-button">+ Создать</span>
+          <addContent></addContent>
+          <!-- <span class="create-button">+ Создать</span> -->
           <Button
             class="login"
             label="Войти"
@@ -19,13 +20,13 @@
     </div>
   </div>
   <!-- <UButton label="Open" @click="isOpen = true" /> -->
-  <UModal v-model="isOpen" prevent-close style="z-index: 150;">
+  <UModal v-model="isOpen" prevent-close style="z-index: 150">
     <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
       <template #header>
         <div class="flex items-center justify-between">
-          <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
+          <!-- <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
             Modal
-          </h3>
+          </h3> -->
           <UButton
             color="gray"
             variant="ghost"
