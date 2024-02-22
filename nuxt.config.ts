@@ -33,6 +33,7 @@ export default defineNuxtConfig({
     }
   },
  modules: [
+  '@nuxtjs/color-mode',
   '@pinia/nuxt',
   '@nuxt/ui',
   'nuxt-primevue',
@@ -43,7 +44,7 @@ export default defineNuxtConfig({
 image: {
 },
  primevue: {
-    usePrimeVue: true,
+    // usePrimeVue: true,
   /* Options */
     options: {
         
