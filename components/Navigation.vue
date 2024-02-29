@@ -34,7 +34,23 @@
             @click="isOpen = false"
           />
         <div class="flex items-center justify-between" style="height: 75dvh;">
-
+          <div class="text-layout">
+          <img src="./img/planet.png" alt="">
+          <span>
+          Войдите в систему,
+          чтобы открыть все возможности
+          Trave<span style="color:#4dd8cf;">lo</span>.
+          </span>
+          <form method="post" action="" @submit.prevent="">
+            <input type="text" placeholder="Электронная почта">
+            <input type="password" placeholder="Пароль">
+            <button>Войти</button>
+          </form>
+         <NuxtLink>Нет аккаунта? <span>Зарегистрироваться</span></NuxtLink>
+         <div class="copy">
+          Продолжай, Вы соглашайтесь с <span>Условиями использования</span> и <span>Политикой конфиденциальности</span>, а так же с <span>Политикой использования файлов cookie</span>.
+         </div>
+          </div>
         </div>
       </template>
 
@@ -48,6 +64,60 @@ const isOpen = ref(false);
 </script>
 
 <style scoped>
+
+.text-layout{
+  font-weight: 900;
+  font-size: 25px;
+  width: 100%;
+  padding: 2vw;
+  display: inline-flex;
+  flex-direction: column;
+}.text-layout .copy{
+  font-size: 13px;
+  text-align: center;
+  font-weight: 700;
+  margin: 25px 0px 0px 0px;
+  color: #b5b5b5;
+}
+.text-layout a{
+  font-size: 17px;
+  text-align: center;
+  font-weight: 700;
+}.text-layout a span{
+  color: #4ac9c0;
+}.text-layout a span{cursor: pointer;}
+.text-layout a span:hover{
+  color: #54e9df;
+}
+.text-layout button{
+  font-size: 17px;
+  font-weight: 700;
+  background-color: #4dd8cf;
+  padding: 15px;
+  border-radius: 50px;
+  margin: 0px 0px 25px 0px;
+  width: 100%;
+}.text-layout button:hover{
+  background-color: #54e9df;
+}.text-layout button:focus{
+  background-color: #4ac9c0;
+}
+
+.text-layout form{
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0px 0px 0px;
+}
+
+.text-layout input{
+  font-size: 17px;
+  font-weight: 700;
+  border: 1px solid #000000;
+  width: 100%;
+  padding: 15px 15px 15px 25px;
+  margin: 0px 0px 15px 0px;
+  border-radius: 50px;
+}
 .navigation {
   width: 100%;
   position: sticky;

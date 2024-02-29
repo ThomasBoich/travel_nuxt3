@@ -109,7 +109,7 @@ onMounted(() => {
   visibility: visible;
 }
 
-@media (max-width: 490px){
+@media (max-width: 770px){
   .where-layout{
     width: calc(100% - 30px);
     padding: 15px 0px 15px 0px;
@@ -120,6 +120,7 @@ onMounted(() => {
     left: -19px;
     top: 49px;
     padding: 9px;
+    max-width: calc(100% + 35px);
   }.where-content button{
     margin: 0px 0px 9px 0px;
   }

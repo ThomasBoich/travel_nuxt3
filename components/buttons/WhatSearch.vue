@@ -71,8 +71,9 @@ const query = ref('')
 .ff{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 95%;
   height: max-content;
+  margin: 0 auto;
 }
 .whatAge{
   display: flex;
@@ -105,6 +106,7 @@ z-index: 145;
 top: 35px;
 box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 border: 1px solid #00000025;
+z-index: 147;
 }
 .what-navigation button{
   width: 100%;
@@ -142,7 +144,7 @@ border: 1px solid #00000025;
 }
 
 
-@media(max-width: 490px){
+@media(max-width: 770px){
   .what-search-layout{
     width: calc(100% - 30px);
     padding: 15px 0px 15px 0px;
@@ -153,6 +155,7 @@ border: 1px solid #00000025;
     width: calc(100% + 39px);
     left: -19px;
     padding: 9px 9px 9px 9px;
+    top: 47px;
   }
   .what-navigation p{
     text-align: left;

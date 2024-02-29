@@ -31,6 +31,9 @@
         class="popular-country"
         v-if="loaded"
       >
+      <NuxtLink to="search" style="width: 100%;
+    display: flex;
+    align-items: center;justify-content: flex-start;text-align: left;">
         <img :src="country.url" alt="" />
         <div class="popular-country-info">
           <div class="popular-country-info-layer">
@@ -38,6 +41,7 @@
             <p>{{ country.countRoad }}</p>
           </div>
         </div>
+      </NuxtLink>
       </div>
     </div>
   </div>
@@ -203,7 +207,7 @@ const countries = ref([
 }
 
 /* мобильная версия */
-@media (max-width: 490px) {
+@media (max-width: 770px) {
   .popular-countries-title h2 {
     font-size: 5vw;
   }

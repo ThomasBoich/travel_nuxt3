@@ -35,7 +35,7 @@ onMounted(() => {
       <p>Site.ru — это тысячи любителей впечатлений в одном месте</p>
       <Search></Search>
       <IndexSearch></IndexSearch>
-      <button class="other">Еще варианты: 495 шт.</button>
+      <NuxtLink to="search" style="width:100%;"><button class="other">Еще варианты: 495 шт.</button></NuxtLink>
     </div>
 
     <PopularRoad></PopularRoad>

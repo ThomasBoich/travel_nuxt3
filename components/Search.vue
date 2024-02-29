@@ -128,7 +128,7 @@ form:hover{
   justify-content: center;
 }
 
-@media (max-width: 490px){
+@media (max-width: 770px){
   form{
     display: flex;
     flex-direction: column;

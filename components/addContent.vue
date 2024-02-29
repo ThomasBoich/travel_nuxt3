@@ -26,13 +26,13 @@ const items = [
       click: () => {
         console.log("Edit");
       },
-      disabled: true,
+      disabled: false,
     },
     {
       label: "Запись в блоге",
       icon: "i-heroicons-document-duplicate-20-solid",
       shortcuts: ["D"],
-      disabled: true,
+      disabled: false,
     },
   ],
   [
@@ -43,7 +43,7 @@ const items = [
     {
       label: "Выйти из системы",
       icon: "i-heroicons-arrow-right-circle-20-solid",
-      disabled: true,
+      disabled: false,
     },
   ],
   // [

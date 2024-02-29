@@ -18,7 +18,7 @@ body{
     margin: 0px 0px 0px 0px;
 }.hello-layout h1{
     margin: 75px 0px 0px 0px;
-    font-size: clamp(25px, 4.99vw,  90px);
+    font-size: clamp(25px, 4.99vw,  79px);
 }
 ul,li,a{
     list-style: none;
@@ -97,7 +97,7 @@ h1{
 
 
 /* мобильная версия */
-@media (max-width: 490px){
+@media (max-width: 770px){
     .hello-layout{
         
     }
