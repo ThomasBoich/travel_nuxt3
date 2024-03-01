@@ -37,7 +37,7 @@
       Обожаю пересматривать старые добрые фильмы Хичкока/Альмодовара, готовить, путешествовать,чилить в спа ну и конечно дурачиться с умными людьми 🙃  Кого ищу? Друга/любовника/мужа и желательно 3 в 1, но как повезет.. главное химия⚛️
     </div> -->
     <!-- <img src="~/assets/img/self.png" alt="" style="width: max-content;height: auto;margin: 15px 0px 0px 0px;"> -->
-    <AboutUser :abouts="abouts"></AboutUser>
+    <AboutUser :abouts="abouts" :margin="margin"></AboutUser>
     <NuxtLink to="chat"><button style="max-width: max-content;font-size:15px;"><img src="~/assets/img/Communication.png" /> Написать сообщение</button></NuxtLink>
     </div>
     </div>
@@ -125,6 +125,7 @@
 definePageMeta({
     layout: 'base'
 })
+const margin = '25px 0px 0px 0px;'
 
 const views = ref([
     {id: 1, title: 'Лес', image: './view.png'},

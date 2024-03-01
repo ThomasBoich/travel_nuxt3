@@ -34,7 +34,7 @@
     </UModal>
     </div>
     </div>
-    <NuxtLink to="message">
+    <NuxtLink to="/chat/message">
     <div class="chat-messege">
     <img src="~/assets/img/photo.png" alt="">
     <div class="chat-messege-user-info">
@@ -46,7 +46,7 @@
     </div>
     </div>
   </NuxtLink>
-  <NuxtLink to="message">
+  <NuxtLink to="/chat/message">
     <div class="chat-messege">
     <img src="~/assets/img/photo2.png" alt="">
     <div class="chat-messege-user-info">

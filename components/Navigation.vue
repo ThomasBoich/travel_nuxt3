@@ -41,7 +41,7 @@
           чтобы открыть все возможности
           Trave<span style="color:#4dd8cf;">lo</span>.
           </span>
-          <form method="post" action="" @submit.prevent="">
+          <form method="post" action="" @submit.prevent="" style="box-shadow: none;border:none;">
             <input type="text" placeholder="Электронная почта">
             <input type="password" placeholder="Пароль">
             <button>Войти</button>

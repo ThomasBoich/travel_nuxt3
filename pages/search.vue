@@ -70,9 +70,13 @@ form:hover {
 .where-layout input,
 select {
   background-color: inherit !important;
+  width: 100%!IMPORTANT;
 }
 .where select {
   background-color: inherit !important;
+  width: 100%!IMPORTANT;
+}.where{
+  width: 100%!IMPORTANT;
 }
 .search-result {
   display: flex;

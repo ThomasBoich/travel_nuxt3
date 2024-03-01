@@ -1,5 +1,5 @@
 <template>
-  <div class="road-view" style="border-bottom: 1px solid #ebebeb;margin: 15px 0px 15px 0px!IMPORTANT;padding: 0px 0px 15px 0px;">
+  <div class="aboutUser aboutUser" style="border-bottom: 1px solid #ebebeb;margin: 15px 0px 15px 0px!IMPORTANT;padding: 0px 0px 15px 0px;">
       <span v-for="about in abouts" :key="about.id"><img :src="about.image" alt="">{{ about.title }}</span>
   </div>
 </template>
@@ -9,13 +9,17 @@ const props = defineProps({
   abouts: {
     type: Array,
     default: () => []
-  }
+  },
+  margin: {
+    type: String,
+    default: '0px 0px 0px 0px'
+}
 })
 </script>
 
 <style scoped>
-    .road-view{display: flex;flex-wrap: wrap;gap: 15px;margin:0px 0px 25px 0px;}
-    .road-view span{
+    .aboutUser{display: flex;flex-wrap: wrap;gap: 15px;}
+    .aboutUser span{
         border-radius: 50px;
         border:1px solid #EBEBEB;
         padding: 9px 15px 9px 15px;
@@ -25,7 +29,7 @@ const props = defineProps({
         font-size: 15px;
         font-weight: 500;
     }
-    .road-view span img{
+    .aboutUser span img{
         margin: 0px 5px 0px 0px;
         width: auto;
         height: 15px;
@@ -44,7 +48,7 @@ const props = defineProps({
     .index-friends-title h2{
         font-size: 5vw;
     }
-    .road-view{
+    .aboutUser{
         overflow: hidden;
         overflow-x: auto;
         display: grid;
