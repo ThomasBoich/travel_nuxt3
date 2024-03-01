@@ -35,7 +35,7 @@
           />
         <div class="flex items-center justify-between" style="height: 75dvh;">
           <div class="text-layout">
-          <img src="./img/planet.png" alt="">
+          <img src="~/assets/img/planet.png" alt="" style="max-width:49px;max-height: auto;position: relative;left: -5px;margin: 0px 0px 15px 0px;">
           <span>
           Войдите в систему,
           чтобы открыть все возможности

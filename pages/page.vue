@@ -18,25 +18,31 @@
     <div class="page-profile">
     <div class="page-profile-description">
     <div class="page-user">
-    <img src="~/assets/img/photo.png" />
+
+    <!-- <img src="~/assets/img/photo.png" /> -->
+
+    <UCarousel v-slot="{ item }" :items="items" :ui="{ item: 'basis-full' }" style="max-width: 259px;margin: 0px 25px 0px 0px;" class="rounded-lg overflow-hidden" indicators>
+    <img :src="item" class="w-full" draggable="false">
+  </UCarousel>
     <div class="page-user-info">
     <span>
     <img src="~/assets/img/pic_location_grey.png" style="display: inline;height:15px;width:auto;margin: 0px 3px 3px -2px;"/>
     Токио</span>
     Виктория, 25 лет
     <!-- <h2>О себе</h2> -->
-    <div class="citata">
+    <!-- <div class="citata">
     <div class="shtrih">
     <img src="~/assets/img/bio.png" alt="" style="width: 25px;height:auto;">
     </div>
       Обожаю пересматривать старые добрые фильмы Хичкока/Альмодовара, готовить, путешествовать,чилить в спа ну и конечно дурачиться с умными людьми 🙃  Кого ищу? Друга/любовника/мужа и желательно 3 в 1, но как повезет.. главное химия⚛️
-    </div>
-    <img src="~/assets/img/self.png" alt="" style="width: max-content;height: auto;margin: 15px 0px 0px 0px;">
-   
+    </div> -->
+    <!-- <img src="~/assets/img/self.png" alt="" style="width: max-content;height: auto;margin: 15px 0px 0px 0px;"> -->
+    <AboutUser :abouts="abouts"></AboutUser>
+    <NuxtLink to="chat"><button style="max-width: max-content;font-size:15px;"><img src="~/assets/img/Communication.png" /> Написать сообщение</button></NuxtLink>
     </div>
     </div>
     <div class="page-user-info-content">
-    <h2 style="font-size: 17px;font-weight: 700;margin: 0px 0px 15px 0px;">Ищу</h2>
+    <!-- <h2 style="font-size: 17px;font-weight: 700;margin: 0px 0px 15px 0px;">Ищу</h2> -->
       Всем привет. Я добрая, позитивная и свободная девушка. Буду рада новым знакомствам. Очень долго не была на теплом солнышке в приятной компании.
     </div>
     <!-- <div class="intresting">
@@ -52,7 +58,7 @@
     </div>
     
     <div class="intresting">
-    <h2>Теги</h2>
+    <h2>Интересы</h2>
     <roadViews :views="views"></roadViews>
     </div>   
     <button><img src="~/assets/img/share.png"> Рекомендовать другу</button> 
@@ -136,15 +142,33 @@ const views = ref([
     {id: 13, title: 'Прогулки', image: './view.png'},
 ])
 const abouts = ref([
-    {id: 1, title: 'Лес', image: './view.png'},
-    {id: 2, title: 'Театр', image: './view2.png'},
-    {id: 3, title: 'Знакомства', image: './view3.png'},
-    {id: 4, title: 'Комедии', image: './view4.png'},
-    {id: 5, title: 'Спортзал', image: './view5.png'},
+    {id: 1, title: 'Не курю', image: './smoke.png'},
+    {id: 2, title: '173 см', image: './height.png'},
+    {id: 3, title: 'Друзей', image: './search.png'},
+    {id: 4, title: 'Есть', image: './kids.png'},
+    {id: 5, title: 'Нет', image: './pets.png'},
+    {id: 5, title: 'МАДИ', image: './edu.png'},
+    {id: 5, title: 'Экономист', image: './prof.png'},
 ])
+
+const items = [
+'./photo.png',
+'./photo.png',
+'./photo.png',
+'./photo.png',
+'./photo.png',
+]
 </script>
 
-<style>
+<style scoped>
+.rounded-lg{
+  gap: 0px!IMPORTANT;
+}
+.rounded-lg button{
+  padding: 0px 0px 0px 0px!IMPORTANT;
+  margin: 0px 0px 0px 0px!IMPORTANT;
+  gap: 0px!IMPORTANT;
+}
 .citata{
   font-size: 15px;
     color: #626262;
@@ -153,7 +177,7 @@ const abouts = ref([
     display: flex;
     align-items: baseline;
     font-weight: 500;
-    border-top: 1px solid #d2d2d2;
+    border-top: 1px solid #ebebeb;
     padding: 15px 0px 0px 0px;
 }
 .shtrih{
@@ -162,7 +186,7 @@ const abouts = ref([
 }
 .intresting{
   margin: 25px 0px 15px 0px;
-  border-bottom: 1px solid #D2D2D2;
+  border-bottom: 1px solid #ebebeb;
   padding: 0px 0px 25px 0px;
 }.intresting h2{
   font-size: 17px;
@@ -228,7 +252,7 @@ const abouts = ref([
   margin: 0px 9px 0px 0px;
 }
 .page-title-layout{
-  border-bottom: 1px solid #D2D2D2;
+  border-bottom: 1px solid #ebebeb;
   padding: 0px 0px 25px 0px;
   margin: 9px 0px 25px 0px;
   display: inline-flex;
@@ -245,7 +269,7 @@ const abouts = ref([
   font-weight: 700;
   margin: 0px 0px 15px 0px;
   width: 100%;
-  border-bottom: 1px solid #D2D2D2;
+  border-bottom: 1px solid #ebebeb;
   padding: 0px 0px 25px 0px;
 }.page-user img{
   width: 259px;
@@ -262,16 +286,16 @@ const abouts = ref([
   font-weight: 500;
 }
 .page-profile{
-  border-bottom: 1px solid #D2D2D2;
+  border-bottom: 1px solid #ebebeb;
   padding: 0px 0px 25px 0px;
 }
-.page-profile-description{border-bottom: 1px solid #D2D2D2;
+.page-profile-description{border-bottom: 1px solid #ebebeb;
     margin: 0px 0px 25px 0px;
     padding: 0px 0px 25px 0px;}
 .page-profile-description button{
   margin: 15px 0px 0px 0px;
   border-radius: 50px;
-  border: 1px solid #D2D2D2;
+  border: 1px solid #ebebeb;
   padding: 9px 15px 9px 15px;
   font-size: 17px;
   display: inline-flex;
@@ -282,7 +306,7 @@ const abouts = ref([
 }.page-profile button{  
   margin: 15px 0px 0px 0px;
   border-radius: 50px;
-  border: 1px solid #D2D2D2;
+  border: 1px solid #ebebeb;
   padding: 9px 15px 9px 15px;
   font-size: 17px;
   display: inline-flex;

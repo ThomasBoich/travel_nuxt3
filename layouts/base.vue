@@ -2,7 +2,7 @@
   <div class="base-content">
   <div class="vertical-nav">
   <NuxtLink to="me"><img src="~/assets/img/BMTH.png" />Талайн</NuxtLink>
-  <NuxtLink to="search"><img src="~/assets/img/Search.png" />Поиск поездок</NuxtLink>
+  <NuxtLink to="/"><img src="~/assets/img/Search.png" />Поиск поездок</NuxtLink>
   <NuxtLink to="chat"><img src="~/assets/img/Communication.png" />Сообщения <span>2</span> </NuxtLink>
   <NuxtLink><img src="~/assets/img/Commercial.png" />Мои объявления <span>15</span></NuxtLink>
   </div>
