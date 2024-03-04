@@ -1,5 +1,11 @@
 <template>
-  <div class="content">
+      <UProgress
+        animation="carousel"
+        v-if="!loaded"
+        style="margin:15dvh auto; max-width: 669px; width: 75%"
+        color="#00C7BB"
+      />
+  <div class="content"  v-if="loaded" data-aos="fade-down">
     <Search></Search>
     <h1 style="font-size: 25px; font-weight: 700; margin: 0px 0px 25px 0px">
       Популярные направления из Москвы
@@ -46,6 +52,21 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: "base",
+});
+const loaded = ref(false);
+const handleImageLoad = () => {
+  loaded.value = true;
+};
+
+onMounted(() => {
+  // Измерение времени монтирования компонента
+  const timeToMount = performance.now();
+  console.log("Время монтирования компонента:", timeToMount);
+
+  setTimeout(() => {
+    loaded.value = true;
+  }, 70);
+  // Установка loaded после завершения монтирования
 });
 </script>
 

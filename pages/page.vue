@@ -1,6 +1,12 @@
 <template>
   <slot>
-    <div class="content">
+    <UProgress
+        animation="carousel"
+        v-if="!loaded"
+        style="margin:15dvh auto; max-width: 669px; width: 75%"
+        color="#00C7BB"
+      />
+    <div class="content"  v-if="loaded" data-aos="fade-down">
     <div class="page-title">
     <div class="page-title-layout">
     <div class="page-title-status">
@@ -125,6 +131,22 @@
 definePageMeta({
     layout: 'base'
 })
+const loaded = ref(false);
+const handleImageLoad = () => {
+  loaded.value = true;
+};
+
+onMounted(() => {
+  // Измерение времени монтирования компонента
+  const timeToMount = performance.now();
+  console.log("Время монтирования компонента:", timeToMount);
+
+  setTimeout(() => {
+    loaded.value = true;
+  }, 70);
+  // Установка loaded после завершения монтирования
+});
+
 const margin = '25px 0px 0px 0px;'
 
 const views = ref([

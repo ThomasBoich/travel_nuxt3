@@ -19,9 +19,7 @@ onMounted(() => {
 </script>
 <template>
     <slot>
-
-
-        <div class="content">
+    <div class="content">
     <div class="hello-layout">
       <UProgress
         animation="carousel"
