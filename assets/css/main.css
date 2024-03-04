@@ -159,7 +159,21 @@ h1{
 .aboutUser{
   margin: 15px 0px 15px 0px !IMPORTANT;
 }
-  
+.user-rating{
+  display: flex;
+  align-items: center;
+}
+.user-rating h2{
+  margin: 0px 5px 0px 0px;
+  display: flex;
+  align-items: center;
+}.user-rating img{
+  width: auto;
+  height: 19px;
+  margin: 0px 5px 0px 15px;
+}.user-rating span{
+  margin: 0px 25px 0px 0px;
+}
 /* мобильная версия */
 @media (max-width: 770px){
     .hello-layout{

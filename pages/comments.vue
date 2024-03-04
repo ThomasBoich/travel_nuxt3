@@ -1,3 +1,4 @@
+
 <template>
   <slot>
     <div class="content">
@@ -23,27 +24,38 @@
     <NuxtLink to="chat"><button style="max-width: max-content;font-size:15px;"><img src="~/assets/img/Communication.png" /> Написать сообщение</button></NuxtLink>
     </div>
     <div class="user-nav">
-    <NuxtLink to="/me" class="active">О себе</NuxtLink>
-    <NuxtLink to="/comments">Отзывы</NuxtLink>
+    <NuxtLink to="/me">О себе</NuxtLink>
+    <NuxtLink to="/comments" class="active">Отзывы</NuxtLink>
     <NuxtLink to="/posts">Объявления</NuxtLink>
     </div>
-    <div class="photos-layout">
-      
 
-    <UCarousel v-slot="{ item }" :items="items">
-      <img :src="item" width="250" height="350" draggable="false">
-    </UCarousel>
+
+    <div class="comments-layout">
+    <div class="rating_item">
+      <img src="~/assets/img/photo2.png" alt="">
+      <div class="comment-layot">
+        <div class="comment_user">
+          <h2>Иванов Иван</h2>
+          <div class="date_and_rating">
+            <div class="date_rating">12 февраля 2024 г. 15:58</div>
+            <div class="rating_layout_star" data-total-value="5">
+              <div class="rating_star" data-item-value="5">★</div>
+              <div class="rating_star" data-item-value="4">★</div>
+              <div class="rating_star" data-item-value="3">★</div>
+              <div class="rating_star" data-item-value="2">★</div>
+              <div class="rating_star" data-item-value="1">★</div>
+            </div>
+          </div>
+        </div>
+        <div class="comment">
+        <span>Комментарий</span>
+        Хороший товар
+      </div>
     </div>
-    <div class="about-user">
-      <h2>О себе</h2>
-    <AboutUser :abouts="abouts" :margin="margin"></AboutUser>
-    </div>
-    <div class="intresting">
-    <h2>Интересы</h2>
-    <roadViews :views="views"></roadViews>
-    </div>   
+      </div>
   </div>
-  
+  </div>
+
   </slot>
 
 </template>
@@ -53,84 +65,30 @@ definePageMeta({
   layout: 'base'
 })
 
-
-const items = [
-  './photo.png',
-  './photo2.png',
-  './photo4.png',
-  './photo5.png',
-  './photo.png',
-]
-
-const abouts = ref([
-    {id: 1, title: 'Не курю', image: './smoke.png'},
-    {id: 2, title: '173 см', image: './height.png'},
-    {id: 3, title: 'Друзей', image: './search.png'},
-    {id: 4, title: 'Есть', image: './kids.png'},
-    {id: 5, title: 'Нет', image: './pets.png'},
-    {id: 5, title: 'МАДИ', image: './edu.png'},
-    {id: 5, title: 'Экономист', image: './prof.png'},
-])
-
-const views = ref([
-    {id: 1, title: 'Лес', image: './view.png'},
-    {id: 2, title: 'Театр', image: './view2.png'},
-    {id: 3, title: 'Знакомства', image: './view3.png'},
-    {id: 4, title: 'Комедии', image: './view4.png'},
-    {id: 5, title: 'Спортзал', image: './view5.png'},
-    {id: 6, title: 'Конный спорт', image: './view6.png'},
-    {id: 7, title: 'Парусный спорт', image: './view7.png'},
-    {id: 8, title: 'Еда', image: './view8.png'},
-    {id: 9, title: 'Фотографии', image: './view9.png'},
-    {id: 10, title: 'Фотографии', image: './view3.png'},
-    {id: 11, title: 'Дайвинг', image: './view7.png'},
-    {id: 12, title: 'Параплыны', image: './view2.png'},
-    {id: 13, title: 'Прогулки', image: './view.png'},
-])
+const active = true
 
 </script>
 
 <style scoped>
-
 a.active{
   color: #000000!IMPORTANT;
 }
-.intresting{
+.comments-layout{
+  display: flex;
+  flex-direction: column;
   margin: 15px 0px 0px 0px;
 }
-.intresting h2{
-  font-size: 19px;
-  font-weight: 700;
-  margin: 0px 0px 15px 0px;
-}
+
 .rating_layout{
     display: flex;
     flex-direction: column;
     margin: 0px 0px 60px 0px;
-    padding: 15px 0px 15px 0px!IMPORTANT;
-}
-
-.aboutUser{
-  border-top: 1px solid rgb(235, 235, 235);
 }
 .rating_top{
     display: flex;
     justify-content: space-between;
     align-content: center;
     margin: 0px 0px 40px 0px;
-}
-.about-user{
-  padding: 0px 0px 0px 0px;
-  margin: 15px 0px 0px 0px;
-  border-top: 1px solid #ebebeb;
-  padding: 15px 0px 0px 0px;
-}
-.about-user h2{
-  font-size: 19px;
-  font-weight: bold;
-}.about-user .aboutUser{
-  padding: 15px 0px 15px 0px!IMPORTANT;
-  padding: 15px 0px 15px 0px!IMPORTANT;
 }
 .comment-layot{
   width: 100%;
@@ -208,15 +166,7 @@ a.active{
 .rating_layout_star[data-total-value="5"] .rating_star:nth-child(n + 1){
     color: #f0be19;
 }
-.photos-layout{
-  padding: 25px 25px 25px 25px;
-  margin: 15px 0px 0px 0px;
-  background-color: #F5F5F5;
-  border-radius: 15px;
-}.photos-layout img{
-  margin: 0px 15px 0px 0px;
-  border-radius: 15px;
-}
+
 .user-nav{
   width: 100%;
   padding: 15px 15px 15px 25px;

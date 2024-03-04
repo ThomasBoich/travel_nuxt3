@@ -28,7 +28,7 @@
     <span>
     <img src="~/assets/img/pic_location_grey.png" style="display: inline;height:15px;width:auto;margin: 0px 3px 3px -2px;"/>
     Токио</span>
-    Виктория, 25 лет
+    <NuxtLink to="/me">Виктория, 25 лет</NuxtLink>
     <!-- <h2>О себе</h2> -->
     <!-- <div class="citata">
     <div class="shtrih">

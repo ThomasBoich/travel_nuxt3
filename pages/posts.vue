@@ -1,3 +1,4 @@
+
 <template>
   <slot>
     <div class="content">
@@ -23,27 +24,38 @@
     <NuxtLink to="chat"><button style="max-width: max-content;font-size:15px;"><img src="~/assets/img/Communication.png" /> Написать сообщение</button></NuxtLink>
     </div>
     <div class="user-nav">
-    <NuxtLink to="/me" class="active">О себе</NuxtLink>
+    <NuxtLink to="/me">О себе</NuxtLink>
     <NuxtLink to="/comments">Отзывы</NuxtLink>
-    <NuxtLink to="/posts">Объявления</NuxtLink>
+    <NuxtLink to="/posts" class="active">Объявления</NuxtLink>
     </div>
-    <div class="photos-layout">
-      
-
-    <UCarousel v-slot="{ item }" :items="items">
-      <img :src="item" width="250" height="350" draggable="false">
-    </UCarousel>
+    <div class="posts-layout">
+    <div class="rating_item">
+      <img src="~/assets/img/country.png" alt="">
+      <div class="post-layout">
+        <div class="post_item">
+          <h2><img src="~/assets/img/pic_location_grey.png" alt="">Сейшелы, Маэ</h2> <span>Знакомства</span>
+        </div>
+        <div class="date">
+        <span>5 Декабря</span>
+        Поездка с целью развлечься господа =)
+      </div>
     </div>
-    <div class="about-user">
-      <h2>О себе</h2>
-    <AboutUser :abouts="abouts" :margin="margin"></AboutUser>
     </div>
-    <div class="intresting">
-    <h2>Интересы</h2>
-    <roadViews :views="views"></roadViews>
-    </div>   
+    <div class="rating_item">
+      <img src="~/assets/img/country.png" alt="">
+      <div class="post-layout">
+        <div class="post_item">
+          <h2><img src="~/assets/img/pic_location_grey.png" alt="">Чеджу, Острова </h2> <span>Знакомства</span>
+        </div>
+        <div class="date">
+        <span>5 Декабря</span>
+        Ну тут сами понимаете ^_^
+      </div>
+    </div>
+    </div>
   </div>
-  
+  </div>
+
   </slot>
 
 </template>
@@ -53,65 +65,39 @@ definePageMeta({
   layout: 'base'
 })
 
-
-const items = [
-  './photo.png',
-  './photo2.png',
-  './photo4.png',
-  './photo5.png',
-  './photo.png',
-]
-
-const abouts = ref([
-    {id: 1, title: 'Не курю', image: './smoke.png'},
-    {id: 2, title: '173 см', image: './height.png'},
-    {id: 3, title: 'Друзей', image: './search.png'},
-    {id: 4, title: 'Есть', image: './kids.png'},
-    {id: 5, title: 'Нет', image: './pets.png'},
-    {id: 5, title: 'МАДИ', image: './edu.png'},
-    {id: 5, title: 'Экономист', image: './prof.png'},
-])
-
-const views = ref([
-    {id: 1, title: 'Лес', image: './view.png'},
-    {id: 2, title: 'Театр', image: './view2.png'},
-    {id: 3, title: 'Знакомства', image: './view3.png'},
-    {id: 4, title: 'Комедии', image: './view4.png'},
-    {id: 5, title: 'Спортзал', image: './view5.png'},
-    {id: 6, title: 'Конный спорт', image: './view6.png'},
-    {id: 7, title: 'Парусный спорт', image: './view7.png'},
-    {id: 8, title: 'Еда', image: './view8.png'},
-    {id: 9, title: 'Фотографии', image: './view9.png'},
-    {id: 10, title: 'Фотографии', image: './view3.png'},
-    {id: 11, title: 'Дайвинг', image: './view7.png'},
-    {id: 12, title: 'Параплыны', image: './view2.png'},
-    {id: 13, title: 'Прогулки', image: './view.png'},
-])
+const active = true
 
 </script>
 
 <style scoped>
-
+.post_item h2 {display: inline-flex;align-items: center;}
+.post_item h2 img{
+  width: auto;
+  height: 19px;
+  margin: 0px 5px 0px 0px;
+}
+.post_item span{
+  font-size: 15px;
+  padding: 9px 15px 9px 15px;
+  border-radius: 91px;
+  background-color: #F8EFE1;
+  color: #454545;
+  margin: 0px 0px 0px 15px;
+  border-radius: 1px solid #F3E2C8;
+}
 a.active{
   color: #000000!IMPORTANT;
 }
-.intresting{
+.posts-layout{
+  display: flex;
+  flex-direction: column;
   margin: 15px 0px 0px 0px;
 }
-.intresting h2{
-  font-size: 19px;
-  font-weight: 700;
-  margin: 0px 0px 15px 0px;
-}
+
 .rating_layout{
     display: flex;
     flex-direction: column;
     margin: 0px 0px 60px 0px;
-    padding: 15px 0px 15px 0px!IMPORTANT;
-}
-
-.aboutUser{
-  border-top: 1px solid rgb(235, 235, 235);
 }
 .rating_top{
     display: flex;
@@ -119,20 +105,7 @@ a.active{
     align-content: center;
     margin: 0px 0px 40px 0px;
 }
-.about-user{
-  padding: 0px 0px 0px 0px;
-  margin: 15px 0px 0px 0px;
-  border-top: 1px solid #ebebeb;
-  padding: 15px 0px 0px 0px;
-}
-.about-user h2{
-  font-size: 19px;
-  font-weight: bold;
-}.about-user .aboutUser{
-  padding: 15px 0px 15px 0px!IMPORTANT;
-  padding: 15px 0px 15px 0px!IMPORTANT;
-}
-.comment-layot{
+.post-layout{
   width: 100%;
 }
 .rating_top a{
@@ -150,34 +123,35 @@ a.active{
     margin: 0px 0px 15px 0px;
     background-color: #F7F7F7;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 .rating_item img{
   width: auto;
-  height: 50px;
-  border-radius: 500px;
+  height: 90px;
+  border-radius: 15px;
   margin: 0px 15px 0px 0px;
 }
-.comment{
+.date{
     display: flex;
     flex-direction: column;
-}.comment span{
+}.date span{
     color: #9e9e9e;
 }
 
-.rating_item .comment{
+.rating_item .date{
     border: none;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
-.comment_user h2{
+.post_item h2{
     font-size: 19px;
     font-weight: 700;
 }
-.comment_user{
+.post_item{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: max-content;
 }
 
 .rating_layout_star{
@@ -208,15 +182,7 @@ a.active{
 .rating_layout_star[data-total-value="5"] .rating_star:nth-child(n + 1){
     color: #f0be19;
 }
-.photos-layout{
-  padding: 25px 25px 25px 25px;
-  margin: 15px 0px 0px 0px;
-  background-color: #F5F5F5;
-  border-radius: 15px;
-}.photos-layout img{
-  margin: 0px 15px 0px 0px;
-  border-radius: 15px;
-}
+
 .user-nav{
   width: 100%;
   padding: 15px 15px 15px 25px;
