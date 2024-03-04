@@ -81,7 +81,8 @@
     
     </div>
     </div>
-  </NuxtLink>    <NuxtLink to="/chat/message">
+  </NuxtLink>
+  <NuxtLink to="/chat/message">
     <div class="chat-messege">
     <img src="~/assets/img/photo.png" alt="">
     <div class="chat-messege-user-info">
