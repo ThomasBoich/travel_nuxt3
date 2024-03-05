@@ -153,6 +153,7 @@ onMounted(() => {
   margin: 0px 9px 0px 0px;
   line-height: 0;
 }.chat-folders a{
+  width: max-content;
   display: inline-flex;
   align-items: center;
   padding: 5px 9px 5px 9px;
