@@ -1,13 +1,17 @@
 <script setup>
 const hello = ref("Путешевствуй в компании");
-
 const loaded = ref(false);
 const handleImageLoad = () => {
   loaded.value = true;
 };
-
-onMounted(() => {
+const countries = ref()
+const users = ref()
+const interests = ref()
+onMounted(async () => {
   // Измерение времени монтирования компонента
+  countries.value = await $fetch('http://localhost:8000/countries/')
+  users.value = await $fetch('http://localhost:8000/users/')
+  interests.value = await $fetch('http://localhost:8000/interests/')
   const timeToMount = performance.now();
   console.log("Время монтирования компонента:", timeToMount);
 
@@ -32,12 +36,12 @@ onMounted(() => {
       </h1>
       <p>Site.ru — это тысячи любителей впечатлений в одном месте</p>
       <Search></Search>
-      <IndexSearch></IndexSearch>
+      <IndexSearch :popular_countries="countries"></IndexSearch>
       <NuxtLink to="search" style="width:100%;"><button class="other">Еще варианты: 495 шт.</button></NuxtLink>
     </div>
 
     <PopularRoad></PopularRoad>
-    <IndexFriends></IndexFriends>
+    <IndexFriends :popular_users="users" :popular_interests="interests"></IndexFriends>
     <div class="info-slide" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
       <div class="info-slide-layout">
       <span>Запывпл ыжэлпжыэвлп эыжлп 

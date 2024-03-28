@@ -1,16 +1,17 @@
 <template>
   <div class="road-view">
-      <span v-for="view in views" :key="view.id"><img :src="view.image" alt="">{{ view.title }}</span>
+      <span v-for="view in popular_interests" :key="view.id"><img :src="view.image" alt="">{{ view.name }}</span>
   </div>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-  views: {
-    type: Array,
-    default: () => []
-  }
-})
+// const props = defineProps({
+//   views: {
+//     type: Array,
+//     default: () => []
+//   }
+// })
+const props = defineProps(['popular_interests'])
 </script>
 
 <style scoped>

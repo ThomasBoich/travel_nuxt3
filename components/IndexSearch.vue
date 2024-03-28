@@ -26,7 +26,7 @@
       </div>
 
       <div
-        v-for="country in countries"
+        v-for="country in popular_countries"
         :key="country.id"
         class="popular-country"
         v-if="loaded"
@@ -34,11 +34,11 @@
       <NuxtLink to="search" style="width: 100%;
     display: flex;
     align-items: center;justify-content: flex-start;text-align: left;">
-        <img :src="country.url" alt="" />
+        <img :src="country.image" alt="" />
         <div class="popular-country-info">
           <div class="popular-country-info-layer">
             <span>{{ country.name }}</span>
-            <p>{{ country.countRoad }}</p>
+            <p>Поездок: {{ country.travel_count }}</p>
           </div>
         </div>
       </NuxtLink>
@@ -52,6 +52,8 @@ const loaded = ref(false);
 const handleImageLoad = () => {
   loaded.value = true;
 };
+const props = defineProps(['popular_countries'])
+
 onMounted(() => {
   // Измерение времени монтирования компонента
   const timeToMount = performance.now();

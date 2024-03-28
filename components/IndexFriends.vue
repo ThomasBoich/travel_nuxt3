@@ -1,4 +1,12 @@
 <script lang="ts" setup>
+const props = defineProps(['popular_users'])
+const interests = ref()
+
+onMounted(async () => {
+  interests.value = await $fetch('http://localhost:8000/interests/')
+});
+
+
 const views = ref([
   { id: 1, title: "Лес", image: "./view.png" },
   { id: 2, title: "Театр", image: "./view2.png" },
@@ -59,14 +67,14 @@ const users = ref([
       <button>Как найти надежного попутчика ></button>
     </div>
     <div class="friends-layout">
-      <roadViews :views="views"></roadViews>
+      <roadViews :views="views" :popular_interests="interests"></roadViews>
       <div class="index-friends-users">
-        <div class="index-friends-user" v-for="user in users" :key="user.id">
+        <div class="index-friends-user" v-for="user in popular_users" :key="user.id">
           <NuxtLink to="page"
             ><img :src="user.photo" alt="" />
             <span>{{ user.first_name }}</span>
           </NuxtLink>
-          <p>{{ user.description }}</p>
+          <p>{{ user.small_description }}</p>
         </div>
       </div>
     </div>
@@ -122,6 +130,12 @@ const users = ref([
   font-size: 15px;
   color: #9b9b9b;
   width: 79%;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: grid;
+  max-height: 48px;
+  text-align: center;
 }
 .other {
   border: 1px solid #e6e6e6;
