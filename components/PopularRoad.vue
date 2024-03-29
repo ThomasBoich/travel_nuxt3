@@ -19,6 +19,12 @@ const popularCity = ref([
     info: "ФОоджыоваывоа ыв ава оыва оыждваоыа ывад ываы ыа ыаыаыв аыа",
   },
 ]);
+const props = defineProps({
+  popularCityCount: {
+    type: Array,
+    required: true,
+  },
+});
 </script>
 <template>
   <div

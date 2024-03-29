@@ -1,60 +1,61 @@
 <script lang="ts" setup>
-const props = defineProps(['popular_users'])
-const interests = ref()
+const props = defineProps(['popular_users', 'popular_interests'])
+const limitedUsers = ref([]);
+// const interests = ref()
 
-onMounted(async () => {
-  interests.value = await $fetch('http://localhost:8000/interests/')
-});
+// onMounted(async () => {
+//   interests.value = await $fetch('http://localhost:8000/interests/')
+// });
 
 
-const views = ref([
-  { id: 1, title: "Лес", image: "./view.png" },
-  { id: 2, title: "Театр", image: "./view2.png" },
-  { id: 3, title: "Знакомства", image: "./view3.png" },
-  { id: 4, title: "Комедии", image: "./view4.png" },
-  { id: 5, title: "Спортзал", image: "./view5.png" },
-  { id: 6, title: "Конный спорт", image: "./view6.png" },
-  { id: 7, title: "Парусный спорт", image: "./view7.png" },
-  { id: 8, title: "Еда", image: "./view8.png" },
-  { id: 9, title: "Фотографии", image: "./view9.png" },
-  { id: 10, title: "Фотографии", image: "./view3.png" },
-  { id: 11, title: "Дайвинг", image: "./view7.png" },
-  { id: 12, title: "Параплыны", image: "./view2.png" },
-  { id: 13, title: "Прогулки", image: "./view.png" },
-]);
+// const views = ref([
+//   { id: 1, title: "Лес", image: "./view.png" },
+//   { id: 2, title: "Театр", image: "./view2.png" },
+//   { id: 3, title: "Знакомства", image: "./view3.png" },
+//   { id: 4, title: "Комедии", image: "./view4.png" },
+//   { id: 5, title: "Спортзал", image: "./view5.png" },
+//   { id: 6, title: "Конный спорт", image: "./view6.png" },
+//   { id: 7, title: "Парусный спорт", image: "./view7.png" },
+//   { id: 8, title: "Еда", image: "./view8.png" },
+//   { id: 9, title: "Фотографии", image: "./view9.png" },
+//   { id: 10, title: "Фотографии", image: "./view3.png" },
+//   { id: 11, title: "Дайвинг", image: "./view7.png" },
+//   { id: 12, title: "Параплыны", image: "./view2.png" },
+//   { id: 13, title: "Прогулки", image: "./view.png" },
+// ]);
 
-const users = ref([
-  {
-    id: 1,
-    first_name: "Виктория",
-    photo: "./photo.png",
-    description: "Описание профиля пользователя",
-  },
-  {
-    id: 2,
-    first_name: "Инчон",
-    photo: "./photo2.png",
-    description: "Описание профиля пользователя",
-  },
-  {
-    id: 3,
-    first_name: "Настя",
-    photo: "./photo3.png",
-    description: "Описание профиля пользователя",
-  },
-  {
-    id: 4,
-    first_name: "Сергей",
-    photo: "./photo4.png",
-    description: "Описание профиля пользователя",
-  },
-  {
-    id: 5,
-    first_name: "Алёна",
-    photo: "./photo5.png",
-    description: "Описание профиля пользователя",
-  },
-]);
+// const users = ref([
+//   {
+//     id: 1,
+//     first_name: "Виктория",
+//     photo: "./photo.png",
+//     description: "Описание профиля пользователя",
+//   },
+//   {
+//     id: 2,
+//     first_name: "Инчон",
+//     photo: "./photo2.png",
+//     description: "Описание профиля пользователя",
+//   },
+//   {
+//     id: 3,
+//     first_name: "Настя",
+//     photo: "./photo3.png",
+//     description: "Описание профиля пользователя",
+//   },
+//   {
+//     id: 4,
+//     first_name: "Сергей",
+//     photo: "./photo4.png",
+//     description: "Описание профиля пользователя",
+//   },
+//   {
+//     id: 5,
+//     first_name: "Алёна",
+//     photo: "./photo5.png",
+//     description: "Описание профиля пользователя",
+//   },
+// ]);
 </script>
 <template>
   <div
@@ -67,9 +68,9 @@ const users = ref([
       <button>Как найти надежного попутчика ></button>
     </div>
     <div class="friends-layout">
-      <roadViews :views="views" :popular_interests="interests"></roadViews>
+      <roadViews :popular_interests></roadViews>
       <div class="index-friends-users">
-        <div class="index-friends-user" v-for="user in popular_users" :key="user.id">
+        <div class="index-friends-user" v-for="(user, index) in popular_users" :key="user.id">
           <NuxtLink to="page"
             ><img :src="user.photo" alt="" />
             <span>{{ user.first_name }}</span>

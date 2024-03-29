@@ -1,25 +1,36 @@
 <script setup>
 const hello = ref("Путешевствуй в компании");
+import { useMyStoreStore } from '@/stores/store';
+
 const loaded = ref(false);
+const store = useMyStoreStore();
 const handleImageLoad = () => {
   loaded.value = true;
 };
+
 const countries = ref()
 const users = ref()
 const interests = ref()
+const travel_count = ref(0)
+
 onMounted(async () => {
   // Измерение времени монтирования компонента
-  countries.value = await $fetch('http://localhost:8000/countries/')
-  users.value = await $fetch('http://localhost:8000/users/')
-  interests.value = await $fetch('http://localhost:8000/interests/')
+  await store.fetchData();
+  countries.value = store.countries
+  users.value = store.users
+  interests.value = store.interests
+  travel_count.value = store.travelCount
   const timeToMount = performance.now();
   console.log("Время монтирования компонента:", timeToMount);
+  console.log(store.travelCount);
 
   setTimeout(() => {
     loaded.value = true;
+    handleImageLoad;
   }, 70);
   // Установка loaded после завершения монтирования
 });
+
 </script>
 <template>
     <slot>
@@ -34,10 +45,10 @@ onMounted(async () => {
       <h1 v-if="loaded" data-aos="fade-down">
         {{ hello }}
       </h1>
-      <p>Site.ru — это тысячи любителей впечатлений в одном месте</p>
+      <p>Travelo — это тысячи любителей впечатлений в одном месте</p>
       <Search></Search>
-      <IndexSearch :popular_countries="countries"></IndexSearch>
-      <NuxtLink to="search" style="width:100%;"><button class="other">Еще варианты: 495 шт.</button></NuxtLink>
+      <IndexSearch :popular_countries="countries" :total_popular_countries="travel_count.total_country_count"></IndexSearch>
+      <NuxtLink to="search" style="width:100%;"><button class="other">Еще варианты: {{ travel_count.total_country_count}} шт.</button></NuxtLink>
     </div>
 
     <PopularRoad></PopularRoad>

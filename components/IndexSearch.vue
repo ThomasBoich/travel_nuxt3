@@ -1,7 +1,7 @@
 <template>
   <div class="popular-countries">
     <div class="popular-countries-title">
-      <h2>Популярные направления <span>999 шт.</span></h2>
+      <h2>Популярные направления <span>{{ total_popular_countries }} шт.</span></h2>
       <button>Как найти надежного попутчика ></button>
     </div>
 
@@ -52,7 +52,7 @@ const loaded = ref(false);
 const handleImageLoad = () => {
   loaded.value = true;
 };
-const props = defineProps(['popular_countries'])
+const props = defineProps(['popular_countries', 'total_popular_countries'])
 
 onMounted(() => {
   // Измерение времени монтирования компонента
